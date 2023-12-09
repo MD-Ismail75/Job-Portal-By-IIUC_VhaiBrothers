@@ -20,3 +20,11 @@ Project Name: Job Search Platform
 
 Project Description:
 The Job Search Platform Software Development project aims to create a robust and user-friendly web and mobile application for job seekers and employers to efficiently connect in a dynamic job market. The platform will serve as a bridge between job seekers and job providers, streamlining the job search and hiring process.
+
+Project Features:
+•	User Registration and Profiles
+•	Job Search and Listing
+•	Privacy and Security
+•	Search Filters and Sorting
+•	User-friendly Interface
+
