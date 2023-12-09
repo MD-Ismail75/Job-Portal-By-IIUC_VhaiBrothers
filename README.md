@@ -8,7 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-Team Name:  IIUC Vhai Brothers
+**Team Name:  IIUC Vhai Brothers**
 Team Members:
 1)	Afif Hossain Irfan	C211005
 2)	Rashedul Arefin Ifty	C211032
