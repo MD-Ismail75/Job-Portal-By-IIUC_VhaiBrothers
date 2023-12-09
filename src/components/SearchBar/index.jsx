@@ -30,6 +30,7 @@ function SearchBar() {
             <option value="Mid Level">Mid Level</option>
             <option value="Senior Level">Senior Level</option>
         </select>
+        <button className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
     </div>
   )
 }
