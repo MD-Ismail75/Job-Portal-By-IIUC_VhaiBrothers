@@ -15,10 +15,11 @@ function App(){
     const q = query(collection(db, "jobs"));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((job) => {
-      
+
       tempJobs.push({
         ...job.data(),
         id: job.id,
+        postedOn: job.data().postedOn.toDate()
       })
     });
     setJobs(tempJobs);

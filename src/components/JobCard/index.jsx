@@ -18,7 +18,7 @@ function JobCard(props) {
                 </div>
             </div>
             <div className='flex items-center gap-4'>
-                <p className='text-gray-500'>Posted {diffInDays} day ago</p>
+                  <p className='text-gray-500'>Posted {diffInDays > 1 ? `${diffInDays} days` : `${diffInDays} day`} ago</p>
                 <a href={props.job_link} target="_blank" rel="noopener noreferrer">
                     <button className='text-blue-500 border border-blue-500 px-10 py-2 rounded-md'>Apply</button>
                 </a>
