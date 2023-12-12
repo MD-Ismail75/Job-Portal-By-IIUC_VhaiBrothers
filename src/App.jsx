@@ -12,9 +12,11 @@ function App(){
 
   const fetchJobs = async () => {
     const tempJobs = []
-    const q = query(collection(db, "jobs"));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((job) => {
+    const jobsRef = query(collection(db, "jobs"));
+    const q = query(jobsRef, orderBy("postedOn", "desc"));
+    const req = await getDocs(q);
+
+    req.forEach((job) => {
 
       tempJobs.push({
         ...job.data(),
