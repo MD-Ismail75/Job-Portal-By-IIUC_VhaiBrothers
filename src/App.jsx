@@ -27,6 +27,24 @@ function App(){
     setJobs(tempJobs);
   }
 
+  const fetchJobsCustom = async (jobCriteria) => {
+    setCustomSearch(true);
+    const tempJobs = []
+    const jobsRef = query(collection(db, "jobs"));
+    const q = query(jobsRef, where("type", "==", jobCriteria.type), where("title", "==", jobCriteria.title), where("experience", "==", jobCriteria.experience), where("location", "==", jobCriteria.location), orderBy("postedOn", "desc"));
+    const req = await getDocs(q);
+
+    req.forEach((job) => {
+      // console.log(doc.id, " => ", doc.data());
+      tempJobs.push({
+        ...job.data(),
+        id: job.id,
+        postedOn: job.data().postedOn.toDate()
+      })
+    });
+    setJobs(tempJobs);
+  }
+
   useEffect(() => {
     fetchJobs()
   }, [])
@@ -35,7 +53,7 @@ function App(){
     <div>
       <Navbar />
       <Header />
-      <SearchBar />
+      <SearchBar fetchJobsCustom={fetchJobsCustom} />
       {jobs.map((job) => (
         <JobCard key={job.id} {...job}/>
         ))}
