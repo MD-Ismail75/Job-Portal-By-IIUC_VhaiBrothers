@@ -6,6 +6,7 @@ import jobData from "./JobDummyData"
 
 import { collection, query, orderBy, where, getDocs } from "firebase/firestore";
 import { db } from "./firebase.config"
+import ValueBar from "./components/ValueBar"
 
 function App(){
   const [jobs, setJobs] = useState([]);
@@ -57,6 +58,7 @@ function App(){
       {jobs.map((job) => (
         <JobCard key={job.id} {...job}/>
         ))}
+      <ValueBar />
     </div>
   )
 }
